@@ -1,0 +1,275 @@
+@import "vars.sass"
+@import "styleguide.sass"
+	
+// HEADER
+header
+	background-color: $greenbg
+
+	.top-block
+		width: 100%
+		text-align: left
+		border-bottom: 3px solid $yellow
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 1000
+		background-color: rgba(27,59,56,0.9)
+		@include respond-to(medium)
+			display: none
+		.wrap
+			max-width: 1150px 
+			margin: 0 auto
+			+flex
+			justify-content: flex-start
+			z-index: 50
+			.header-menu
+				display: inline-block
+				margin: 0
+				li
+					display: inline-block
+					padding: 0 2rem
+					img
+						padding-right: 1rem
+					a
+						color: $lightgray
+						vertical-align: top
+						+flex
+						font-size: 1.5rem
+						&:hover
+							color: $yellow
+	.bottom-block
+		background-color: $bg
+		padding: 1.5rem 3rem
+		width: 100%
+		+flex
+		padding-top: 7rem
+		justify-content: flex-start
+		margin: 0 auto
+		@include respond-to(medium)
+			padding-top: 1.5rem
+		.wrap
+			+flex
+			justify-content: flex-start
+			width: 1100px
+			margin: 0 auto
+			@include respond-to(medium)
+				width: 100%
+				padding: 0 3rem
+			a.logo
+				display: inline-block
+				margin-right: 4rem
+			#menu-list
+				display: inline-block
+				margin: 0
+				@include respond-to(medium)
+					display: none
+				.menu-item
+					display: inline-block
+					padding: 0 3rem
+					position: relative
+					a
+						text-transform: uppercase
+						display: block
+						font-size: 1.5rem
+					ul
+					    background-color: $bg
+					    z-index: 5
+					    overflow: hidden
+					    position: absolute
+					    left: 0
+					    top: 2.8rem
+					    display: none
+					    padding: 1rem
+					    width: 100%
+					    border: 1px solid $yellow
+.sm-menu-list
+	top: 0
+	background-color: rgba(0,0,0, 0.8)
+	position: fixed
+	width: 100vw
+	height: 100vh
+	z-index: 10
+	display: block
+	right: -100vw
+	-webkit-transition: all 0.5s
+	-o-transition: all 0.5s
+	transition: all 0.5s
+	opacity: 0.8
+	&-active 
+		right: 0
+	ul#menu-list
+		list-style-type: none
+		padding: 0
+		text-align: center
+		margin-top: 15rem
+		li
+			width: 100vw
+			a
+				line-height: 3
+				font-size: 1.8rem
+				letter-spacing: 5px
+				color: #fff
+				display: block
+				width: 100%
+				-webkit-transition: all 0.2s
+				-o-transition: all 0.2s
+				transition: all 0.2s
+				text-transform: uppercase
+				border: 2px solid transparent
+				&:hover 
+					text-decoration: none
+					border: 2px solid $yellow
+				ul
+					display: none
+	ul.header-menu
+		background-color: $greenbg
+		bottom: 30px
+		position: absolute
+		width: 100%
+		margin: 0
+		border: 3px solid $yellow
+		padding: 3rem 0
+		li
+			line-height: 4.5rem
+	button.contact
+		border-bottom: 3px solid $yellow
+		+flex
+		padding: 0.5rem 1rem
+		margin: 0 auto
+		position: absolute
+		font-size: 1.167rem
+		line-height: 1.429
+		top: 30px
+		left: 50%
+		transform: translateX(-50%)
+		@include respond-to(small)
+			border: 1.5px solid $yellow
+
+.menu-link
+	z-index: 15
+	display: block
+	width: 50px
+	height: 50px
+	border: 2px solid $yellow
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4)
+	background-color: $greenbg
+	position: fixed
+	top: 15px
+	right: 30px
+	display: none
+	@include respond-to(medium)
+		display: block
+	span
+		content: ''
+		margin-top: -1px
+		transition: all 0.2s
+		display: block
+		height: 2px
+		width: 30px
+		background-color: $yellow
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		top: 50%
+		&:before
+			content: ''
+			transition: all 0.2s
+			display: block
+			height: 2px
+			width: 30px
+			background-color: $yellow
+			position: absolute
+			left: 30%
+			top: 50%
+			margin-top: -10px
+			margin-left: -9px
+		&:after 
+			content: ''
+			transition: all 0.2s
+			display: block
+			height: 2px
+			width: 30px
+			background-color: $yellow
+			position: absolute
+			left: 30%
+			top: 50%
+			margin-top: 8px
+			margin-left: -9px
+	&_active
+		span 
+			background-color: transparent
+			&:before 
+				-webkit-transform: rotate(45deg)
+				-ms-transform: rotate(45deg)
+				-o-transform: rotate(45deg)
+				transform: rotate(45deg)
+				margin-top: 0
+				width: 30px
+			&:after 
+				-webkit-transform: rotate(-45deg)
+				-ms-transform: rotate(-45deg)
+				-o-transform: rotate(-45deg)
+				transform: rotate(-45deg)
+				margin-top: 0
+				width: 30px
+button.contact
+	background-color: $bg
+	color: $white
+	border-radius: 0
+	border: 3px solid $yellow
+	border-bottom: 0
+	padding: 1rem 0.5rem
+	+flex
+	margin: 0
+	text-align: center
+	font-size: 1.167rem
+	line-height: 1.429
+
+	&:hover
+		.swing
+			-webkit-animation: swing 0.6s ease
+			animation: swing 0.6s ease
+			animation-iteration-count: infinite
+			animation-timing-function: linear
+	img
+		padding-left: 1rem
+		margin-top: -0.5rem
+		transition: all 0.3s ease		
+
++keyframes(call)
+	0%
+		left: 5rem
+	50%
+		center: 3rem
+	100%
+		right: 5rem
++keyframes(swing)
+	0%
+		transform: rotate(30deg)
+	25%
+		transform: rotate(10deg)
+	50%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(10deg)
+	
+
+	
+
+    
+
+            
+
+   
+	
+   
+   
+       
+        
+
+
+
+
+
+
+

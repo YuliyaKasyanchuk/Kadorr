@@ -1,0 +1,145 @@
+@import "vars.sass"
+
+//General
+
+html
+	font-size: 75%
+	@include respond-to(prelarge)
+		font-size: 62.5%
+	@include respond-to(desktop)
+		font-size: 50%
+	@include respond-to(mobil)
+		font-size: 37.5%
+
+*
+	outline: none 
+	box-sizing: border-box
+
+textarea
+	resize: none
+
+.hidden
+	display: none
+
+body
+	margin: 0
+	min-height: 100vh
+	min-width: 300px
+	position: relative
+	font-size: 16px
+	line-height: 1.6
+	+bg(center center,auto,true)
+	font-weight: normal
+	+font('DinPro')
+	color: black
+	cursor: default
+	overflow-x: hidden
+	text-align: center
+	background-color: $bg
+	&.no-scroll
+		overflow: hidden
+		height: 100%
+
+ul
+	list-style: none
+	padding-left: 0px
+
+a
+	text-decoration: none
+	color: $white
+	+trans(.3s)
+	&:hover
+		color: $yellow
+
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	+font('DinPro')
+
+h1
+	text-transform: uppercase
+	font-size: 3.2rem
+	margin-bottom: 1.5rem
+	text-align: left
+	color: $red
+
+h2
+	color: $yellow
+	font-size:  5.858rem
+	text-align: left
+
+h3
+	font-size: 2.5rem
+	text-align: center
+	color:  $yellow
+	
+		
+h4
+	color: $black
+	font-size: 2rem
+	margin-bottom: 1.2rem
+	text-align: left
+
+blockquote
+	text-align: center
+	font-size: 1.375em
+	font-style: italic
+	font-weight: 300
+
+p
+	color: $textblue
+	font-size: 1.8rem
+
+button, submit
+	font-size: 1.6rem
+	cursor: pointer
+	margin: 3rem 0
+	padding: 1rem 3rem
+	display: block
+	border-radius: 5px
+	text-transform: uppercase
+	+trans
+.button
+	font-size: 1.6rem
+	cursor: pointer
+	margin: 3rem 0
+	padding: 1rem 3rem
+	display: block
+	border-radius: 5px
+	text-transform: uppercase
+	+trans
+
+//FORM STYLE
+
+input[type="submit"]
+
+input[type="text"],textarea
+
+*::-webkit-input-placeholder
+	text-align: left
+	color: $gray
+	opacity: 1
+
+*:-moz-placeholder
+	text-align: left
+	color: $gray
+	opacity: 1
+
+*::-moz-placeholder
+	text-align: left	
+	color: $gray
+	opacity: 1
+
+*:-ms-input-placeholder
+	text-align: left
+	color: $gray
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	text-align: left
+	color: $gray
+body input:required:valid,
+body textarea:required:valid
+	text-align: left
+	color: $gray
